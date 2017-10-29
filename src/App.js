@@ -15,9 +15,22 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <h1> Note app </h1>
-        <Note noteContent= {} noteId = {} key={}/>
+      <div className="noteWrapper">
+        <div className="noteHeader">
+          <div className="heading">Note App</div>
+        </div>
+        <div className="notesBody ">
+          {
+            this.state.notes.map((note) => {
+              return (
+                <Note noteContent = {note.noteContent} noteId = {note.id} key={note.id}/>  
+              )
+            })
+          }
+        </div>
+        <div className="notesFooter">
+          footerwill go her
+        </div>
       </div>
     );
   }
