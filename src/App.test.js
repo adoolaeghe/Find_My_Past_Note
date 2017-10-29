@@ -1,8 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import { shallow, mount, render } from 'enzyme';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-});
+configure({ adapter: new Adapter() });
+describe('<App />', () => {
+  it('renders 1 <App /> component', () => {
+    const component = shallow(<App name='app'/>);
+    expect(component).toHaveLength(1);
+  })
+})

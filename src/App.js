@@ -9,10 +9,7 @@ class App extends Component {
     super(props)
     this.addNote = this.addNote.bind(this);
     this.state = {
-      notes: [
-        {id: 1, noteContent: "Note 1 here !"},
-        {id: 2, noteContent: "Note 2 here !"}
-      ],
+      notes: [],
     }
   }
 
