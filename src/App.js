@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Note from './Note/Note'
+import NoteForm from './NoteForm/NoteForm'
 import logo from './logo.svg';
 import './App.css';
 
@@ -15,21 +16,21 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="noteWrapper">
-        <div className="noteHeader">
+      <div className="notesWrapper">
+        <div className="notesHeader">
           <div className="heading">Note App</div>
         </div>
         <div className="notesBody ">
           {
             this.state.notes.map((note) => {
               return (
-                <Note noteContent = {note.noteContent} noteId = {note.id} key={note.id}/>  
+                <Note noteContent = {note.noteContent} noteId = {note.id} key={note.id}/>
               )
             })
           }
         </div>
         <div className="notesFooter">
-          footerwill go her
+          <NoteForm />
         </div>
       </div>
     );
