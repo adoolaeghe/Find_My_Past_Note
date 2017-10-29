@@ -13,9 +13,6 @@
   opacity: 1;
 }
 
-@keyframes fadeIn { from { opacity:0; } to { opacity:0.8; } }
-@keyframes fadeOut { from { opactiy:0.8; } to { opacity:0; } }
-
 .fade-in {
     opacity:0;
     animation:fadeIn ease-in 1;
@@ -41,3 +38,6 @@
 .closebtn:hover {
     color: #AC2500;
 }
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:0.8; } }
+@keyframes fadeOut { from { opactiy:0.8; } to { opacity:0; } }
