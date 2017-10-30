@@ -16,6 +16,7 @@ class App extends Component {
   addNote(noteTitle, noteContent) {
     const previousNote = this.state.notes;
     previousNote.push({id: previousNote.length +1, noteContent: noteContent, noteTitle: noteTitle});
+    localStorage['notes'] = JSON.stringify(previousNote);
     this.setState({
       notes: previousNote
     })
@@ -29,7 +30,7 @@ class App extends Component {
         </div>
         <div className="notesBody ">
           {
-            this.state.notes.map((note) => {
+            JSON.parse(localStorage['notes']).map((note) => {
               return (
                 <Note noteContent = {note.noteContent} noteTitle = {note.noteTitle} noteId = {note.id} key={note.id}/>
               )
