@@ -1,7 +1,7 @@
 import React from 'react';
-import App from './App';
-import Note from './Note/Note';
-import NoteForm from './NoteForm/NoteForm'
+import App from '../App';
+import Note from '../components/Note/Note';
+import NoteForm from '../components/NoteForm/NoteForm'
 import { shallow, mount, render } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';

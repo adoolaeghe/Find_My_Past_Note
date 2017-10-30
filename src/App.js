@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Note from './Note/Note'
-import NoteForm from './NoteForm/NoteForm'
-import logo from './logo.svg';
-import './App.css';
+import Note from './components/Note/Note'
+import NoteForm from './components/NoteForm/NoteForm'
+import './style/App.css';
 
 class App extends Component {
   constructor(props){
