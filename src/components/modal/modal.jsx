@@ -20,7 +20,7 @@ class Modal extends Component {
       <div id={this.props.noteId.toString()} className="modal">
         <div className="modal-content">
           <span onClick={this.closeModalClick.bind(this)} class="close">&times;</span>
-          <h>{this.noteTitle}</h>
+          <div>{this.noteTitle}</div>
           <p>{this.noteContent}</p>
         </div>
       </div>
