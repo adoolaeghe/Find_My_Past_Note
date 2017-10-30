@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Note from './components/Note/Note'
 import NoteForm from './components/NoteForm/NoteForm'
 import './style/App.css';
+import './models/modal'
 
 class App extends Component {
   constructor(props){
@@ -12,9 +13,9 @@ class App extends Component {
     }
   }
 
-  addNote(note) {
+  addNote(noteTitle, noteContent) {
     const previousNote = this.state.notes;
-    previousNote.push({id: previousNote.length +1, noteContent: note});
+    previousNote.push({id: previousNote.length +1, noteContent: noteContent, noteTitle: noteTitle});
     this.setState({
       notes: previousNote
     })
@@ -30,7 +31,7 @@ class App extends Component {
           {
             this.state.notes.map((note) => {
               return (
-                <Note noteContent = {note.noteContent} noteId = {note.id} key={note.id}/>
+                <Note noteContent = {note.noteContent} noteTitle = {note.noteTitle} noteId = {note.id} key={note.id}/>
               )
             })
           }
