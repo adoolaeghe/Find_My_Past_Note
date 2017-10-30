@@ -10,19 +10,29 @@ class App extends Component {
     this.addNote = this.addNote.bind(this);
     this.state = {
       notes: [],
+      i: 0,
     }
   }
 
+
+
   addNote(noteTitle, noteContent) {
     const previousNote = this.state.notes;
-    previousNote.push({id: previousNote.length +1, noteContent: noteContent, noteTitle: noteTitle});
-    localStorage['notes'] = JSON.stringify(previousNote);
+    if(previousNote.length !== 0){
+      previousNote.push({id: previousNote.length +1, noteContent: noteContent, noteTitle: noteTitle});
+      localStorage['notes'] = JSON.stringify(previousNote);
+    } else {
+      var notes = JSON.parse(localStorage['notes'])
+      notes.push({id: previousNote.length +1, noteContent: noteContent, noteTitle: noteTitle});
+      localStorage['notes'] = JSON.stringify(notes)
+    }
     this.setState({
       notes: previousNote
     })
   }
 
   render() {
+    if(localStorage['notes']){
     return (
       <div className="notesWrapper">
         <div className="notesHeader">
@@ -31,8 +41,10 @@ class App extends Component {
         <div className="notesBody ">
           {
             JSON.parse(localStorage['notes']).map((note) => {
+              const i = this.state.i++
+              console.log(i)
               return (
-                <Note noteContent = {note.noteContent} noteTitle = {note.noteTitle} noteId = {note.id} key={note.id}/>
+                <Note noteContent = {note.noteContent} noteTitle = {note.noteTitle} noteId = {i} key={note.id}/>
               )
             })
           }
@@ -42,7 +54,21 @@ class App extends Component {
         </div>
       </div>
     );
+  } else {
+    return(
+    <div className="notesWrapper">
+      <div className="notesHeader">
+        <div className="heading">Note App</div>
+      </div>
+    <div className="notesBody ">
+    </div>
+    <div className="notesFooter">
+      <NoteForm addNote = {this.addNote} />
+    </div>
+  </div>
+  )
   }
+}
 }
 
 export default App;

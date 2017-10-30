@@ -1,8 +1,19 @@
 .formWrapper{
-    margin: auto;
+    height: 100px;
+    flex-direction: row;
+
+}
+
+.inputWrapper{
+  display: flex;
+  flex-direction: row;
+
+
 }
 
 .noteButton{
+    margin-top: 180%;
+    height: 60%;
     border: none;
     margin: 0px;
     border-top-right-radius: 4px;
@@ -15,27 +26,57 @@
     transition: 0.2s ease-out;
 }
 
+
 .noteButton:hover{
-    background-color: #02BA85;
+    background-color: red;
     color: #fff;
-    transition: 0.2s ease-out;
+    transition: 0.5s ease-out;
+
+}
+
+.titleWrapper, .contentWrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.titleHeader, .contentHeader {
+  margin-left: 10%;
+  width: 10%;
+  font-size: 1.4em;
+  padding: 10px;
+  color: white;
+  font-family: 'Droid Sans', sans-serif;
 }
 
 .noteInput{
-    width: 800px;
-    min-width: 800px;
+    height: 140%;
+    width: 700px;
+    min-width: 60%;
     font-size: 1.3em;
     padding-left: 20px;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
     font-family: 'Droid Sans', sans-serif;
     background-color: rgba(34,49,63,0.8);
     color: #fff;
+    outline: none;
     transition: 0.2s ease-out;
 }
 
-.noteInput:focus{
-    background-color: #E4F1FE;
-    color: #111;
-    transition: 0.2s ease-in;
+.noteTitle{
+  height: 60%;
+  width: 60%;
+  min-width: 100px;
+  font-size: 1.3em;
+  padding-left: 20px;
+  font-family: 'Droid Sans', sans-serif;
+  background-color: rgba(34,49,63,0.8);
+  color: #fff;
+  outline: none;
+  transition: 0.2s ease-out;
+}
+
+.noteInput:focus, .noteTitle:focus{
+  background-color: #E4F1FE;
+  color: #111;
+  transition: 0.2s ease-in;
 }

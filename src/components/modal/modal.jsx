@@ -11,12 +11,13 @@ class Modal extends Component {
   }
 
   closeModalClick() {
-    document.getElementById('myModal').style.display = "none";
+    document.getElementById(this.props.noteId.toString()).style.display = "none";
   }
 
   render(props){
+  console.log(this.props.noteId.toString())
     return(
-      <div id="myModal" className="modal">
+      <div id={this.props.noteId.toString()} className="modal">
         <div className="modal-content">
           <span onClick={this.closeModalClick.bind(this)} class="close">&times;</span>
           <h>{this.noteTitle}</h>

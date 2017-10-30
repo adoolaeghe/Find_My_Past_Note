@@ -13,7 +13,8 @@ class Note extends Component {
 
 
   onClick() {
-    document.getElementById('myModal').style.display = "block";
+    console.log(this.props.noteId)
+    document.getElementById(this.props.noteId.toString()).style.display = "block";
   }
 
 
@@ -21,11 +22,13 @@ class Note extends Component {
 
   render(props){
     return(
+    <div className='noteWrapper'>
       <div className='note fade-in' >
         <p className= 'noteContent'>{this.noteTitle}</p>
-        <button onClick={this.onClick} id="myBtn">Open Modal</button>
-        <Modal noteTitle={this.noteTitle} noteContent={this.noteContent}/>
+        <button onClick={this.onClick.bind(this)} id="myBtn">Open Modal</button>
       </div>
+      <Modal noteTitle={this.noteTitle} noteContent={this.noteContent} noteId={this.props.noteId}/>
+    </div>
     )
   }
 }
