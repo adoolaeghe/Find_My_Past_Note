@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Modal from '../modal/modal'
 import '../../style/Note.css'
 import PropTypes from 'prop-types'
 
@@ -7,16 +8,23 @@ class Note extends Component {
     super(props);
     this.noteContent = props.noteContent;
     this.noteTitle = props.noteTitle;
+    this.onClick = this.onClick.bind(this)
   }
 
-  style = {
 
+  onClick() {
+    document.getElementById('myModal').style.display = "block";
   }
+
+
+
+
   render(props){
-  console.log(this.noteTitle)
     return(
       <div className='note fade-in' >
-        <p className= 'noteContent'>{this.noteContent}{this.noteTitle}</p>
+        <p className= 'noteContent'>{this.noteTitle}</p>
+        <button onClick={this.onClick} id="myBtn">Open Modal</button>
+        <Modal noteTitle={this.noteTitle} noteContent={this.noteContent}/>
       </div>
     )
   }
