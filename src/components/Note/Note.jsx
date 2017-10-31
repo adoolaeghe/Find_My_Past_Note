@@ -18,13 +18,15 @@ class Note extends Component {
 
   render(props){
     return(
-    <div className='noteWrapper'>
-      <div className='note fade-in' >
-        <p className='noteContent'>{this.noteTitle}</p>
-        <button className='btnModal' onClick={this.onClick.bind(this)} id="myBtn">Open Modal</button>
+      <div className = 'noteWrapper'>
+        <div className = 'note fade-in' >
+          <p className = 'noteContent'>{this.noteTitle}</p>
+          <button className = 'btnModal' onClick = {this.onClick.bind(this)} id = "myBtn">Open Modal</button>
+        </div>
+        <Modal noteTitle = {this.noteTitle}
+               noteContent = {this.noteContent}
+               noteId = {this.props.noteId}/>
       </div>
-      <Modal noteTitle={this.noteTitle} noteContent={this.noteContent} noteId={this.props.noteId}/>
-    </div>
     )
   }
 }

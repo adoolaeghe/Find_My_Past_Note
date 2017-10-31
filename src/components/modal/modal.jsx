@@ -15,11 +15,10 @@ class Modal extends Component {
   }
 
   render(props){
-  console.log(this.props.noteId.toString())
     return(
       <div id={this.props.noteId.toString()} className="modal">
         <div className="modal-content">
-          <span onClick={this.closeModalClick.bind(this)} class="close">&times;</span>
+          <span onClick={this.closeModalClick.bind(this)} className="close">&times;</span>
           <div>{this.noteTitle}</div>
           <p>{this.noteContent}</p>
         </div>

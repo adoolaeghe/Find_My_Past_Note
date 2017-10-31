@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../style/NoteForm.css'
-import PropTypes from 'prop-types'
+
 
 class NoteForm extends Component {
   constructor(props){
@@ -36,16 +36,18 @@ class NoteForm extends Component {
 
   render(){
     return(
-      <div className='formWrapper'>
-          <div className='titleWrapper'>
-            <p className='titleHeader'>Title:</p>
-            <input className="noteTitle" type="text" placeholder="note Title" value={this.state.newNoteTitle} onChange={this.handleUserInputTitle}/>
-          </div>
-          <div className='contentWrapper'>
-            <p className='titleHeader'>Content:</p>
-            <input className="noteInput" type="text" placeholder="Write a new note..." value={this.state.newNoteContent} onChange={this.handleUserInputNote}/>
-            <input className="noteButton" type="button" value="Post" onClick={this.writeNote.bind(this)}/>
-          </div>
+      <div className = "notesFooter">
+        <div className = 'formWrapper'>
+            <div className = 'titleWrapper'>
+              <p className = 'titleHeader'>Title:</p>
+              <input className = "noteTitle" type = "text" placeholder = "note Title" value = {this.state.newNoteTitle} onChange = {this.handleUserInputTitle}/>
+            </div>
+            <div className = 'contentWrapper'>
+              <p className = 'titleHeader'>Content:</p>
+              <input className = "noteInput" type = "text" placeholder = "Write a new note..." value = {this.state.newNoteContent} onChange = {this.handleUserInputNote}/>
+              <input className = "noteButton" type = "button" value = "Post" onClick = {this.writeNote.bind(this)}/>
+            </div>
+        </div>
       </div>
     )
   }

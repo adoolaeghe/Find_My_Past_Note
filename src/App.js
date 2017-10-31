@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './components/header/header'
 import Note from './components/Note/Note'
 import NoteForm from './components/NoteForm/NoteForm'
 import './style/App.css';
@@ -10,7 +11,7 @@ class App extends Component {
     this.addNote = this.addNote.bind(this);
     this.state = {
       notes: [],
-      i: 0,
+      noteId: 0,
     }
   }
 
@@ -19,11 +20,11 @@ class App extends Component {
   addNote(noteTitle, noteContent) {
     const previousNote = this.state.notes;
     if(previousNote.length !== 0){
-      previousNote.push({id: previousNote.length +1, noteContent: noteContent, noteTitle: noteTitle});
+      previousNote.push({noteContent: noteContent, noteTitle: noteTitle});
       localStorage['notes'] = JSON.stringify(previousNote);
     } else {
       var notes = JSON.parse(localStorage['notes'])
-      notes.push({id: previousNote.length +1, noteContent: noteContent, noteTitle: noteTitle});
+      notes.push({ noteContent: noteContent, noteTitle: noteTitle});
       localStorage['notes'] = JSON.stringify(notes)
     }
     this.setState({
@@ -33,42 +34,36 @@ class App extends Component {
 
   render() {
     if(localStorage['notes']){
-    return (
-      <div className="notesWrapper">
-        <div className="notesHeader">
-          <div className="heading">Note App</div>
-        </div>
-        <div className="notesBody ">
-          {
-            JSON.parse(localStorage['notes']).map((note) => {
-              const i = this.state.i++
-              console.log(i)
-              return (
-                <Note noteContent = {note.noteContent} noteTitle = {note.noteTitle} noteId = {i} key={note.id}/>
-              )
-            })
-          }
-        </div>
-        <div className="notesFooter">
+      return (
+        <div className="notesWrapper">
+          <Header />
+          <div className="notesBody">
+            {
+              JSON.parse(localStorage['notes']).map((note) => {
+                return (
+                  <Note noteContent = {note.noteContent}
+                        noteTitle = {note.noteTitle}
+                        noteId = {this.state.noteId++}
+                        key = {this.state.noteId++}/>
+                )
+              })
+            }
+          </div>
           <NoteForm addNote = {this.addNote} />
         </div>
-      </div>
-    );
-  } else {
-    return(
-    <div className="notesWrapper">
-      <div className="notesHeader">
-        <div className="heading">Note App</div>
-      </div>
-    <div className="notesBody ">
-    </div>
-    <div className="notesFooter">
-      <NoteForm addNote = {this.addNote} />
-    </div>
-  </div>
-  )
+      );
+    } else {
+      return(
+        <div className="notesWrapper">
+          <Header />
+          <div className="notesBody" />
+          <div className="notesFooter">
+            <NoteForm addNote = {this.addNote} />
+          </div>
+        </div>
+      )
+    }
   }
-}
 }
 
 export default App;
