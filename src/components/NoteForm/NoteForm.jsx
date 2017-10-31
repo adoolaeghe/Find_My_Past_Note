@@ -45,7 +45,7 @@ class NoteForm extends Component {
               <input className = "noteTitle" type = "text" placeholder = "note Title" value = {this.state.newNoteTitle} onChange = {this.handleUserInputTitle}/>
             </div>
             <div className = 'contentWrapper'>
-              <p className = 'titleHeader'>Content:</p>
+              <p className = 'contentHeader'>Content:</p>
               <input className = "noteInput" type = "text" placeholder = "Write a new note..." value = {this.state.newNoteContent} onChange = {this.handleUserInputNote}/>
               <input className = "noteButton" type = "button" value = "Post" onClick = {this.writeNote.bind(this)}/>
             </div>

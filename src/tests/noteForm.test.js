@@ -15,9 +15,14 @@ const minProps = {
 }
 
 describe('<NoteForm />', () => {
-  it('renders 1 <NoteForm /> component', () => {
+  it('renders 1 <NoteForm /> component with appropriate elements', () => {
     const component = shallow(<NoteForm />);
     expect(component).toHaveLength(1);
+    expect(component.find('p.titleHeader').length).toEqual(1);
+    expect(component.find('input.noteTitle').length).toEqual(1);
+    expect(component.find('p.contentHeader').length).toEqual(1);
+    expect(component.find('input.noteInput').length).toEqual(1);
+    expect(component.find('input.noteButton').length).toEqual(1);
   })
 
   it('had a note content originally empty', () => {

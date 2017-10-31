@@ -1,0 +1,347 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Note /> receive the props 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Note
+    date="a new note date"
+    noteContent="a new note"
+    noteId="1"
+    noteTitle="a new note title"
+    onClick={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="note fade-in"
+        >
+          <p
+            className="noteContent"
+          >
+            a new note title
+          </p>
+          <div
+            className="noteTime"
+          >
+            Date: 
+            a new note
+             
+            <br />
+             at 
+            date
+             
+          </div>
+          <button
+            className="btnModal"
+            id="myBtn"
+            onClick={[Function]}
+          >
+            Open
+          </button>
+        </div>,
+        <Modal
+          noteContent="a new note"
+          noteId="1"
+          noteTitle="a new note title"
+        />,
+      ],
+      "className": "noteWrapper",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="noteContent"
+            >
+              a new note title
+            </p>,
+            <div
+              className="noteTime"
+            >
+              Date: 
+              a new note
+               
+              <br />
+               at 
+              date
+               
+            </div>,
+            <button
+              className="btnModal"
+              id="myBtn"
+              onClick={[Function]}
+            >
+              Open
+            </button>,
+          ],
+          "className": "note fade-in",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "a new note title",
+              "className": "noteContent",
+            },
+            "ref": null,
+            "rendered": "a new note title",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Date: ",
+                "a new note",
+                " ",
+                <br />,
+                " at ",
+                "date",
+                " ",
+              ],
+              "className": "noteTime",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Date: ",
+              "a new note",
+              " ",
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              " at ",
+              "date",
+              " ",
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Open",
+              "className": "btnModal",
+              "id": "myBtn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Open",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "class",
+        "props": Object {
+          "noteContent": "a new note",
+          "noteId": "1",
+          "noteTitle": "a new note title",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="note fade-in"
+          >
+            <p
+              className="noteContent"
+            >
+              a new note title
+            </p>
+            <div
+              className="noteTime"
+            >
+              Date: 
+              a new note
+               
+              <br />
+               at 
+              date
+               
+            </div>
+            <button
+              className="btnModal"
+              id="myBtn"
+              onClick={[Function]}
+            >
+              Open
+            </button>
+          </div>,
+          <Modal
+            noteContent="a new note"
+            noteId="1"
+            noteTitle="a new note title"
+          />,
+        ],
+        "className": "noteWrapper",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="noteContent"
+              >
+                a new note title
+              </p>,
+              <div
+                className="noteTime"
+              >
+                Date: 
+                a new note
+                 
+                <br />
+                 at 
+                date
+                 
+              </div>,
+              <button
+                className="btnModal"
+                id="myBtn"
+                onClick={[Function]}
+              >
+                Open
+              </button>,
+            ],
+            "className": "note fade-in",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "a new note title",
+                "className": "noteContent",
+              },
+              "ref": null,
+              "rendered": "a new note title",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Date: ",
+                  "a new note",
+                  " ",
+                  <br />,
+                  " at ",
+                  "date",
+                  " ",
+                ],
+                "className": "noteTime",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Date: ",
+                "a new note",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                " at ",
+                "date",
+                " ",
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Open",
+                "className": "btnModal",
+                "id": "myBtn",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Open",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "class",
+          "props": Object {
+            "noteContent": "a new note",
+            "noteId": "1",
+            "noteTitle": "a new note title",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

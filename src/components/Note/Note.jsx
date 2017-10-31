@@ -26,7 +26,7 @@ class Note extends Component {
         </div>
         <Modal noteTitle = {this.noteTitle}
                noteContent = {this.noteContent}
-               noteId = {this.props.noteId}/>
+               noteId = {this.props.noteId} />
       </div>
     )
   }

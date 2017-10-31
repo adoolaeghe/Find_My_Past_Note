@@ -26,7 +26,6 @@ class App extends Component {
       const notes = JSON.parse(localStorage['notes'])
       notes.push({ noteContent: noteContent, noteTitle: noteTitle, date: new Date()});
       localStorage['notes'] = JSON.stringify(notes)
-      console.log(this.state.notes);
     }
     this.setState({
       notes: previousNote
