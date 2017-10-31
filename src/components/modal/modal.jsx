@@ -19,8 +19,8 @@ class Modal extends Component {
       <div id={this.props.noteId.toString()} className="modal">
         <div className="modal-content">
           <span onClick={this.closeModalClick.bind(this)} className="close">&times;</span>
-          <div>{this.noteTitle}</div>
-          <p>{this.noteContent}</p>
+          <div className="modalTitle">{this.noteTitle}</div>
+          <p className="modalContent">{this.noteContent}</p>
         </div>
       </div>
     )

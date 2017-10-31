@@ -3,7 +3,7 @@ import Header from './components/header/header'
 import Note from './components/Note/Note'
 import NoteForm from './components/NoteForm/NoteForm'
 import './style/App.css';
-import './models/modal'
+import './models/addFirstNoteToLocalStorage'
 
 class App extends Component {
   constructor(props){
@@ -19,13 +19,14 @@ class App extends Component {
 
   addNote(noteTitle, noteContent) {
     const previousNote = this.state.notes;
-    if(previousNote.length !== 0){
-      previousNote.push({noteContent: noteContent, noteTitle: noteTitle});
+    if((localStorage['notes'] == undefined)){
+      previousNote.push({noteContent: noteContent, noteTitle: noteTitle, date: new Date()});
       localStorage['notes'] = JSON.stringify(previousNote);
     } else {
-      var notes = JSON.parse(localStorage['notes'])
-      notes.push({ noteContent: noteContent, noteTitle: noteTitle});
+      const notes = JSON.parse(localStorage['notes'])
+      notes.push({ noteContent: noteContent, noteTitle: noteTitle, date: new Date()});
       localStorage['notes'] = JSON.stringify(notes)
+      console.log(this.state.notes);
     }
     this.setState({
       notes: previousNote
@@ -44,7 +45,8 @@ class App extends Component {
                   <Note noteContent = {note.noteContent}
                         noteTitle = {note.noteTitle}
                         noteId = {this.state.noteId++}
-                        key = {this.state.noteId++}/>
+                        key = {this.state.noteId++}
+                        date= {note.date}/>
                 )
               })
             }

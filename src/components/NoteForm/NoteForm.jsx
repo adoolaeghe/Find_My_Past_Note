@@ -27,7 +27,9 @@ class NoteForm extends Component {
   }
 
   writeNote(){
-    this.props.addNote(this.state.newNoteTitle, this.state.newNoteContent);
+    if ((this.state.newNoteTitle !== '') || (this.state.newNoteContent !== '')){
+      this.props.addNote(this.state.newNoteTitle, this.state.newNoteContent);
+    }
     this.setState({
         newNoteContent: '',
         newNoteTitle: '',

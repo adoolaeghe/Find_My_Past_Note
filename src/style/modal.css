@@ -27,9 +27,20 @@
     font-weight: bold;
 }
 
+.modalTitle {
+  font-size: 400%;
+  height: 40%;
+  font-family: 'Lato', sans-serif;
+}
+
+.modalContent {
+  font-size: 200%;
+  font-family: 'Lato', sans-serif;
+}
+
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

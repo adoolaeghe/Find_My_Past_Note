@@ -21,7 +21,8 @@ class Note extends Component {
       <div className = 'noteWrapper'>
         <div className = 'note fade-in' >
           <p className = 'noteContent'>{this.noteTitle}</p>
-          <button className = 'btnModal' onClick = {this.onClick.bind(this)} id = "myBtn">Open Modal</button>
+          <div className= 'noteTime'>Date: {this.props.date.substring(0,10)} <br/> at {this.props.date.substring(11,16)} </div>
+          <button className = 'btnModal' onClick = {this.onClick.bind(this)} id = "myBtn">Open</button>
         </div>
         <Modal noteTitle = {this.noteTitle}
                noteContent = {this.noteContent}
