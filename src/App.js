@@ -3,7 +3,6 @@ import Header from './components/header/header'
 import Note from './components/Note/Note'
 import NoteForm from './components/NoteForm/NoteForm'
 import './style/App.css';
-import './models/addFirstNoteToLocalStorage'
 
 class App extends Component {
   constructor(props){
